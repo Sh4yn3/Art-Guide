@@ -1,0 +1,33 @@
+body{
+    font-family: "Arial";
+    color:#000000;
+    background-color:#f3f2f1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+nav{
+    font-family: "Arial";
+    color:#ca4a28;
+}
+header{
+    font-family: "Grandstander", cursive;
+    font-optical-sizing: auto;
+    color:#ca4a28;
+}
+main{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    margin-left: 20px;
+    font-family: "Arial";
+    color:#000000;
+}
+footer{
+    margin-top: 50px;
+    margin-right: 100px;
+    text-align: right;
+    font-family: "Arial";
+    color: #9c8f8d;
+}
