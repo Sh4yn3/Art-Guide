@@ -40,10 +40,5 @@ def medium(id):
     return render_template("medium.html", medium=medium)
 
 
-@app.route('/triangles/<int:size>')
-def triangles(size):
-    return render_template
-
-
 if __name__ == '__main__':
     app.run(debug=True)
