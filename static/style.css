@@ -1,3 +1,15 @@
+header{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color: #272626;
+    padding: 10px;
+    font-family: "Grandstander", cursive;
+    font-optical-sizing: auto;
+    color:#ca4a28;
+}
+
 body{
     font-family: "Arial";
     color:#000000;
@@ -7,13 +19,9 @@ body{
     margin-right: 30px;
     margin-left: 30px;
 }
+
 nav{
     font-family: "Arial";
-    color:#ca4a28;
-}
-header{
-    font-family: "Grandstander", cursive;
-    font-optical-sizing: auto;
     color:#ca4a28;
 }
 main{
@@ -24,6 +32,7 @@ main{
     font-family: "Arial";
     color:#000000;
 }
+
 footer{
     margin-top: 50px;
     margin-right: 100px;
