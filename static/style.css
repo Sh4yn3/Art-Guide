@@ -1,9 +1,9 @@
 header{
-    margin-top: 0px;
+    margin-top: 5px;
     margin-bottom: 0px;
     margin-right: 0px;
     margin-left: 0px;
-    background-color: #272626;
+    background-color: #f5f4f3;
     padding: 10px;
     font-family: "Grandstander", cursive;
     font-optical-sizing: auto;
@@ -21,6 +21,7 @@ body{
 }
 
 nav{
+    padding: 10px;
     font-family: "Arial";
     color:#ca4a28;
 }
