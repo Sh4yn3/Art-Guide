@@ -40,9 +40,20 @@ def medium(id):
     return render_template("medium.html", medium=medium)
 
 
+def generate_triangle(size):
+    triangle = []
+    for i in range(1, size + 1):
+        line = '*' * i
+        triangle.append(line)
+    return '\n'.join(triangle)
+
+
 @app.route('/triangles/<int:size>')
 def triangles(size):
-    return render_template("triangles.py")
+    if size < 1:
+        return "Size must be a positive integer.", 400
+    triangle = generate_triangle(size)
+    return f"<pre>{triangle}</pre>"
 
 
 if __name__ == '__main__':
