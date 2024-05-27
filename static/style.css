@@ -3,12 +3,12 @@ header{
     margin-bottom: 0px;
     margin-right: 0px;
     margin-left: 0px;
-    background-color: #f5f4f3;
+    background-color: #ca4a28;
     padding: 10px;
     font-family: "Grandstander", cursive;
     font-optical-sizing: auto;
     padding: 10px;
-    color:#ca4a28;
+    color:#f5f4f3;
 }
 
 body{
@@ -36,4 +36,20 @@ footer{
     text-align: right;
     font-family: "Arial";
     color: #9c8f8d;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    background-color: #ffffff00
 }

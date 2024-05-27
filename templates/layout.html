@@ -1,40 +1,50 @@
 <!doctype html>
-<html lang="en">
-
-
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         
-        <meta charset= "utf-9">
-        <meta name="viewport" 
-        content="width-device-width, initial-scale=1">
+    <meta charset= "utf-9">
+    <meta name="viewport" 
+    content="width-device-width, initial-scale=1">
 
-    <link rel="stylesheet" href = "/static/style.css">
+<link rel="stylesheet" href = "/static/style.css">
+</head>
 
-    </head>
 
-
-    <header>
+<header>
     
-        <nav class="headernav navbar fixed-top">
+    <nav class="headernav navbar fixed-top">
+        <div class="container fluid"> 
+            <a class="navbar-logo" href="/">
+                    
+                <img src= "static\images\Icon.png"
+                alt="ArtGuide"
+                style= "width: 120px; height: 120px;"
+                />
+            </a>
+            <ul>
+                <li><a href="/mediums"> Mediums </a></li>
+                <li><a href="/artstyles"> Artstyles </a></li>
+            </ul> 
 
 
-        </nav>
+        </div>
+
+    </nav>
     
-    </header>
+</header>
 
     
-    <body>
+<body>
 
-        <main>
+    <main>
             {% block content %}{% endblock %}
-        </main>
-        <footer>
-            <p><font size="2px"> ©2024 </font></p>
-        </footer>
-    </body>
+     </main>
+     <footer>
+         <p><font size="2px"> ©2024 </font></p>
+     </footer>
+</body>
 
 
-    </html>
+</html>

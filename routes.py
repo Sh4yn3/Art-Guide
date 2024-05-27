@@ -10,7 +10,7 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/artstyle')
+@app.route('/artstyles')
 def artstylenav():
     return render_template('artstylenav.html')
 
