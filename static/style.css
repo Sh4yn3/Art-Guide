@@ -1,10 +1,4 @@
 header{
-    margin-top: 5px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    background-color: #ca4a28;
-    padding: 10px;
     font-family: "Grandstander", cursive;
     font-optical-sizing: auto;
     padding: 10px;
@@ -37,11 +31,17 @@ footer{
     font-family: "Arial";
     color: #9c8f8d;
 }
+
+
 ul{
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 10;
     overflow: hidden;
+    background-color:#ca4a28;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 li {
@@ -50,6 +50,6 @@ li {
 
 li a {
     display: block;
-    padding: 8px;
-    background-color: #ffffff00
+    padding: 10px;
+    background-color:#ca4a28
 }
