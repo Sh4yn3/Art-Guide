@@ -1,4 +1,5 @@
 <!doctype html>
+<html>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,41 +10,32 @@
     content="width-device-width, initial-scale=1">
 
 <link rel="stylesheet" href = "/static/style.css">
+
 </head>
 
+<nav>
+    <ul>
+        <li><a href="/"> 
+            <img src= "static\images\Icon.png" alt="ArtGuide"
+            style= "width: 50px; height: 50px;"
+            />
+        </a></li>
 
-<header>
-    
-    <nav class="headernav navbar fixed-top">
-        <div class="container fluid"> 
-            </a>
-            <ul>
-                <li><a href="/"> 
-                    <img src= "static\images\Icon.png" alt="ArtGuide"
-                    style= "width: 45px; height: 45px;"
-                    />
-                </a></li>
-                <li><a href="/mediums"> Mediums </a></li>
-                <li><a href="/artstyles"> Artstyles </a></li>
-            </ul> 
+        <li><a href="/mediums"> Mediums </a></li>
+        <li><a href="/artstyles"> Artstyles </a></li>
+        </ul> 
+</nav>
+<div style="padding:20px;margin-top:50px;height:1500px;">
 
 
-        </div>
-
-    </nav>
-    
-</header>
-
-    
 <body>
-
     <main>
-            {% block content %}{% endblock %}
-     </main>
-     <footer>
-         <p><font size="2px"> ©2024 </font></p>
-     </footer>
+        {% block content %}{% endblock %}
+    </main>
 </body>
 
+<footer>
+    <p><font size="2px"> ©2024 </font></p>
+</footer>
 
 </html>

@@ -1,55 +1,37 @@
-header{
+/* <!--Navigation Bar --> */
+
+ul {
     font-family: "Grandstander", cursive;
-    font-optical-sizing: auto;
-    padding: 10px;
-    color:#f5f4f3;
-}
-
-body{
-    font-family: "Arial";
-    color:#000000;
-    background-color:#f3f2f1;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 30px;
-    margin-left: 30px;
-}
-
-main{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 100px;
-    margin-left: 20px;
-    font-family: "Arial";
-    color:#000000;
-}
-
-footer{
-    margin-top: 50px;
-    margin-right: 100px;
-    text-align: right;
-    font-family: "Arial";
-    color: #9c8f8d;
-}
-
-
-ul{
     list-style-type: none;
-    margin: 0;
-    padding: 10;
+    margin-top: 0;
+    padding: 0;
     overflow: hidden;
-    background-color:#ca4a28;
+    border: 1px solid #b83f1d ;
+    background-color: #ca4a28;
     position: fixed;
     top: 0;
     width: 100%;
 }
-
 li {
-    float: left;
+    float:left;
+}
+li a {
+    display:block;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #2b1717;
 }
 
-li a {
-    display: block;
-    padding: 10px;
-    background-color:#ca4a28
+/* <!-- Webpages' styles --> */
+
+h1 {
+    font-family: "Grandstander", cursive;
+}
+main {
+    font-family: Arial, Helvetica, sans-serif;
 }
