@@ -1,10 +1,11 @@
 <!doctype html>
 <html>
 <head>
+    <!-- Loads the font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        
+    
     <meta charset= "utf-9">
     <meta name="viewport" 
     content="width-device-width, initial-scale=1">
@@ -12,15 +13,15 @@
 <link rel="stylesheet" href = "/static/style.css">
 
 </head>
+<body>
 
 <nav>
     <ul>
         <li><a href="/"> 
-            <img src= "static\images\Icon.png" alt="ArtGuide"
+            <img src= "/static/images/Icon.png" alt="ArtGuide"
             style= "width: 50px; height: 50px;"
             />
         </a></li>
-
         <li><a href="/mediums"> Mediums </a></li>
         <li><a href="/artstyles"> Artstyles </a></li>
         </ul> 
@@ -28,14 +29,15 @@
 <div style="padding:20px;margin-top:50px;height:1500px;">
 
 
-<body>
+
     <main>
         {% block content %}{% endblock %}
     </main>
-</body>
+
 
 <footer>
     <p><font size="2px"> ©2024 </font></p>
 </footer>
 
+</body>
 </html>
