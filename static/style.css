@@ -4,10 +4,8 @@ body {
 
 /* <!--Navigation Bar --> */
 
-ul {
-    font-family: "Grandstander", cursive;
+.topnav {
     list-style-type: none;
-    font-size: 20px;
     margin-top: 0;
     padding: 0;
     overflow: hidden;
@@ -17,20 +15,42 @@ ul {
     top: 0;
     width: 100%;
 }
-li {
+.topnav li {
     float:left;
 }
-li a {
+.topnav-logo li a img{
+    padding-left: 15px;
+    padding-right: 10px;
+    transition: all 0.3s ease;
+    height: 45px;
+    width: 45px;
+}
+.topnav-logo li a img:hover:not(.active){
+    filter: brightness(85%);
+}
+.topnav-options li a {
+    font-family: "Grandstander", cursive;
+    font-size: 20px;
     display:block;
-    color: white;
+    color:white;
     text-align: center;
-    padding:5px 15px;
+    padding:15px 15px;
     padding-top: 15px;
     padding-bottom: 15px;
     text-decoration: none;
 }
-li a:hover:not(.active) {
-    background-color: #2b1717;
+.topnav-options li a:hover:not(.active) {
+    filter: brightness(90%);
+    background-color: #3d1616;
+}
+.topnav-search { 
+    float:right;
+    padding-right: 10px;
+}
+
+@media screen and (max-width:600px) {
+    .topnav li.search,
+    .topnav li {float:none;}
 }
 
 /* <!-- Webpages' styles --> */
