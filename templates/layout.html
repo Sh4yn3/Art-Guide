@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Loads icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <link rel="stylesheet" href = "/static/style.css">
 
 </head>
@@ -18,18 +19,18 @@
 
 <nav>
     <div class="topnav">
-        <div class="topnav-logo">
-            <li><a href="/"> 
-                 <img src= "/static/images/Icon.png" alt="ArtGuide"/>
-            </a></li>
-        <div class="topnav-options">
-            <li><a href="/mediums"> Mediums </a></li>
-            <li><a href="/artstyles"> Artstyles </a></li>
-        <div class="topnav-search">
-            <li><input type="text" placeholder="Search..."> </li>
-        </ul> 
+        <a class="active" href="/">Home</a>
+        <a href="/medium">Mediums</a>
+        <a href="/artstyle">Artstyles</a>
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
 </nav>
-<div style="margin-top:30px; height: 1500px">
+<div style="height: 1500px;">
 
     <main>
         {% block content %}{% endblock %}
@@ -38,19 +39,6 @@
 <footer>
     <p><font size="2px"> ©2024 </font></p>
 </footer>
-
-<script>
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        document.getElementById("nav").style.top = "0";
-      } else {
-        document.getElementById("nav").style.top = "-50px";
-      }
-      prevScrollpos = currentScrollPos;
-    }
-</script>
 
 </body>
 </html>
