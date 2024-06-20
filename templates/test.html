@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset= "utf-9">
+    <meta name="viewport" 
+    content="width-device-width, initial-scale=1">
+
+</head>
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #f0f0f0; /* Example background color */
+    }
+    
+    .navbar-logo {
+        flex: 0 0 auto; /* Prevents the logo from growing */
+    }
+    
+    .navbar-logo img {
+        max-height: 40px; /* Adjust the maximum height of the logo */
+        width: auto;
+        vertical-align: middle; /* Ensures the logo aligns with text baseline */
+        display: inline-block; /* Ensures inline-block behavior */
+    }
+    
+    .navbar-menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    .navbar-menu li {
+        margin-right: 15px;
+    }
+    
+    .navbar-menu li:last-child {
+        margin-right: 0;
+    }
+    
+    .navbar-menu li a {
+        text-decoration: none;
+        color: #333; /* Example text color */
+    }    
+</style>
+
+<body>
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+        </a>
+        <ul class="navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </nav>    
+
+    <div style="height: 1500px;">
+</body>
+
+</html>

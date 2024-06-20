@@ -56,6 +56,13 @@ def triangles(size):
     return f"<pre>{triangle}</pre>"
 
 
+# I struggle so I have test html ; will be removed in the final product
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
+
 # For the search function
 
 @app.route('/')

@@ -1,68 +1,89 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%
+  margin: 0;
+  padding: 0;
+  height: 100%
 }
 
 /* <!--Fixed Navigation Bar--> */
 
 .topnav {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    background-color: #ca4a28;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ca4a28;
+  box-shadow: 1px 2px 4px black;
 }
   
 .topnav a {
-    float: left;
-    display: block;
-    color: #ffffff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  font-family: "Grandstander", cursive;
+  float: left;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 18px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
   
 .topnav a:hover {
-    background-color: #b63f1e;
-    color: black;
-  }
+  background-color: #b63f1e;
+  color: black;
+}
   
-  .topnav a.active {
-    background-color: #2196F3;
-    color: white;
-  }
-  
-  .topnav .search-container {
+.topnav a.logo {
+  background-color: #ad2210;
+  color: white;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+  padding: 2px 16px;
+  vertical-align: left;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: left;
+  box-sizing: border-box;
+  flex:0 0 auto;
+}
+.topnav img {
+    max-height: 45px; 
+    max-width: 45px;
+}
+
+.topnav a.logo img:hover:not(.active){
+  filter: brightness(85%);
+}
+
+.topnav .search-container {
     float: right;
-  }
+}
   
-  .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-  }
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
   
-  .topnav .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  .topnav .search-container button:hover {
-    background: #ccc;
-  }
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 9px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.topnav .search-container button:hover {
+  background: #ccc;
+}
 
 /* <!-- To keep the page consistent -->  */
 
 @media screen and (max-width: 600px) {
-  .topnav {
-      position: relative;
+  .topnav { 
+      position: relative; /* Fixed turns into relative when zoomed to scroll down*/
   }
   .topnav .search-container {
       float: none;
@@ -82,14 +103,17 @@ body {
 
 /* <!-- Styles for the webpages to keep consistency --> */
 
+main {
+  padding-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
     font-family: "Grandstander", cursive;
     padding-top: 20px;
     padding-left: 20px;
 }
-main {
-    font-family: Arial, Helvetica, sans-serif;
-}
+
 p {
     padding-left: 20px;
 }
