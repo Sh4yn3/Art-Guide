@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Example</title>
+</head>
+<body>
+    <h1>Search Example</h1>
+    <form action="/search" method="get">
+        <input type="text" name="query" placeholder="Search..." value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+    <div id="results">
+        {% if artstyles %}
+            <h2>Art Styles</h2>
+            <ul>
+                {% for id, name in artstyles %}
+                    <li><a href="/artstyle/{{ id }}">{{ name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if mediums %}
+            <h2>Mediums</h2>
+            <ul>
+                {% for id, name in mediums %}
+                    <li><a href="/medium/{{ id }}">{{ name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if not artstyles and not mediums %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

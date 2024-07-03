@@ -22,18 +22,19 @@
 <nav>
     <div class="topnav">
         <a class="logo" href="/">
-          <img src="/static/images/Icon.png" alt="Home" title="Home" aria-label="Home">
+            <img src="/static/images/Icon.png" alt="Home" title="Home" aria-label="Home">
         </a>
         <a href="/medium">Mediums</a>
         <a href="/artstyle">Artstyles</a>
         <div class="search-container">
-          <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="query">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
-      </div>
+    </div>
 </nav>
+
 <div style="height: 1500px;">
 
     <main>

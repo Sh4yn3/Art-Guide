@@ -63,20 +63,58 @@ def test():
     return render_template('test.html')
 
 
-# For the search function
+# Teacher's search function that I have no clue how to do
 
-@app.route('/')
-def index():
+# @app.route('/')
+# def index():
     return render_template('search.html')
 
 
-@app.route('/search', methods=['GET', 'POST'])
-def search():
+# @app.route('/search', methods=['GET', 'POST'])
+# def search():
     if request.method == 'POST':
         search = request.form.get('searchterm')
         return f'You asked to search for \"{search}\"'
     else:
         return "poop"
+
+# Search Function
+
+
+@app.route('/search')
+def search():
+    query = request.args.get('query')
+    artstyles = []
+    mediums = []
+    if query:
+        conn = sqlite3.connect('ARTGUIDE.db')
+        c = conn.cursor()
+        # Perform search queries for both tables with multiline SQL
+        c.execute(
+            '''
+            SELECT id, name
+            FROM ArtStyles
+            WHERE name LIKE ?
+            ''',
+            ('%' + query + '%',)
+        )
+        artstyles = c.fetchall()  # Fetch all rows
+        c.execute(
+            '''
+            SELECT id, name
+            FROM Mediums
+            WHERE name LIKE ?
+            ''',
+            ('%' + query + '%',)
+        )
+        mediums = c.fetchall()  # Fetch all rows
+        conn.close()
+    return render_template(
+        'search.html',
+        artstyles=artstyles,
+        mediums=mediums,
+        query=query
+    )
 
 
 if __name__ == '__main__':
