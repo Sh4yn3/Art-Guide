@@ -1,8 +1,14 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import sqlite3
 
-
 app = Flask(__name__)
+
+DATABASE = 'ARTGUIDE.db'
+
+
+def get_db():
+    conn = sqlite3.connect(DATABASE)
+    return conn
 
 
 @app.route('/')
@@ -21,100 +27,29 @@ def mediumsnav():
 
 
 @app.route('/artstyle/<int:id>')
-def artstyles(id):
-    conn = sqlite3.connect('ARTGUIDE.db')
+def artstyle(id):
+    conn = get_db()
     cur = conn.cursor()
-    cur.execute("SELECT * FROM ArtStyles WHERE id=?;", (id,))
-    artstyles = cur.fetchone()
+    cur.execute("SELECT * FROM ArtStyles WHERE id = ?", (id,))
+    artstyle = cur.fetchone()
     conn.close()
-    return render_template("artstyle.html", artstyles=artstyles)
+    return render_template('artstyle.html', artstyle=artstyle)
 
 
 @app.route('/medium/<int:id>')
 def medium(id):
-    conn = sqlite3.connect('ARTGUIDE.db')
+    conn = get_db()
     cur = conn.cursor()
-    cur.execute("SELECT * FROM Mediums WHERE id=?", (id,))
+    cur.execute('SELECT * WHERE id = ?', (id,))
     medium = cur.fetchone()
     conn.close()
-    return render_template("medium.html", medium=medium)
+    return render_template('medium.html', medium=medium)
 
 
-def generate_triangle(size):
-    triangle = []
-    for i in range(1, size + 1):
-        line = '*' * i
-        triangle.append(line)
-    return '\n'.join(triangle)
+if __name__ == '__main__':
+    app.run(debug=True)
 
-
-@app.route('/triangles/<int:size>')
-def triangles(size):
-    if size < 1:
-        return "Size must be a positive integer.", 400
-    triangle = generate_triangle(size)
-    return f"<pre>{triangle}</pre>"
-
-
-# I struggle so I have test html ; will be removed in the final product
-
-@app.route('/test')
-def test():
-    return render_template('test.html')
-
-
-# Teacher's search function that I have no clue how to do
-
-# @app.route('/')
-# def index():
-    return render_template('search.html')
-
-
-# @app.route('/search', methods=['GET', 'POST'])
-# def search():
-    if request.method == 'POST':
-        search = request.form.get('searchterm')
-        return f'You asked to search for \"{search}\"'
-    else:
-        return "poop"
-
-# Search Function
-
-
-@app.route('/search')
-def search():
-    query = request.args.get('query')
-    artstyles = []
-    mediums = []
-    if query:
-        conn = sqlite3.connect('ARTGUIDE.db')
-        c = conn.cursor()
-        # Perform search queries for both tables with multiline SQL
-        c.execute(
-            '''
-            SELECT id, name
-            FROM ArtStyles
-            WHERE name LIKE ?
-            ''',
-            ('%' + query + '%',)
-        )
-        artstyles = c.fetchall()  # Fetch all rows
-        c.execute(
-            '''
-            SELECT id, name
-            FROM Mediums
-            WHERE name LIKE ?
-            ''',
-            ('%' + query + '%',)
-        )
-        mediums = c.fetchall()  # Fetch all rows
-        conn.close()
-    return render_template(
-        'search.html',
-        artstyles=artstyles,
-        mediums=mediums,
-        query=query
-    )
+# For Searching
 
 
 if __name__ == '__main__':

@@ -1,9 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset= "utf-9">
-    <meta name="viewport" 
-    content="width-device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Loads the font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,11 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Loads icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link 
-
-<link rel="stylesheet" href = "/static/style.css">
-
+    
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
@@ -27,13 +23,14 @@
         <a href="/medium">Mediums</a>
         <a href="/artstyle">Artstyles</a>
         <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Search.." name="query">
+                <input type="text" id="query" name="query" placeholder="Search..">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
 </nav>
+
+<div id="results"></div>
 
 <div style="height: 1500px;">
 
