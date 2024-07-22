@@ -141,6 +141,11 @@ img {
     height: 240px;
 }
 
+.link{
+  text-decoration: none;
+  color: rgb(91, 87, 87)
+}
+
 /* CSS for Artstyle */
 
 .art-image img{
@@ -150,3 +155,4 @@ img {
   margin-top: 0px;
   margin: 15px;
 }
+
