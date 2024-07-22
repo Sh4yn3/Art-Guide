@@ -1,17 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
-<title> {{artstyle[0]}} - Artstyle </title>
-<h1> {{artstyle[0]}} </h1>
+<title> {{artstyle[1]}} - Artstyle </title>
+
+<p class="space">
+    <a href="/" class="link">Home</a> / <a href="/Artstyle" class="link">Artstyles</a>
+</p>
+
+<h1> {{artstyle[1]}} </h1>
 
 <hr/>
 
 
 <div class="art-image">
-    <img src= "{{artstyle[2]}}">
+    <img src= "{{artstyle[3]}}">
 </div>
 
 <p>
-    {{artstyle[1]}}
+    {{artstyle[2]}}
 </p>
     
 {% endblock %}

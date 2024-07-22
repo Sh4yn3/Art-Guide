@@ -112,7 +112,6 @@ main {
 
 h1 {
   font-family: "Grandstander", cursive;
-  padding-top: 20px;
   padding-left: 20px;
 }
 
@@ -146,6 +145,12 @@ img {
   color: rgb(91, 87, 87)
 }
 
+
+.space{
+  margin-top:50px
+  /* Exists to put a gap between the nav and paragraphs*/
+}
+
 /* CSS for Artstyle */
 
 .art-image img{
@@ -155,4 +160,3 @@ img {
   margin-top: 0px;
   margin: 15px;
 }
-
