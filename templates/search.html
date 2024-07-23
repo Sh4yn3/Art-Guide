@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1 class="space">Search Results</h1>
+
+<p>
+    {% for result in results %}
+        <li>{{ result }}</li>
+    {% endfor %}
+
+    > <a href="/" class="link">Go back</a>
+</p>
+
+{% endblock %}

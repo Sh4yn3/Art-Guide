@@ -23,7 +23,8 @@
         <a href="/medium">Mediums</a>
         <a href="/artstyle">Artstyles</a>
         <div class="search-container">
-                <input type="text" id="query" name="query" placeholder="Search..">
+            <form action="/search" method="POST">
+                <input type="text" id="query" name="search_term" placeholder="Search..">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
