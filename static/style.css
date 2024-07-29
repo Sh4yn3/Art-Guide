@@ -56,23 +56,24 @@ body {
 }
 
 .topnav .search-container {
-  float: right;
+  float: left;
 }
   
 .topnav input[type=text] {
   padding: 6px;
-  margin-top: 8px;
+  margin-top: 8.1px;
   font-size: 17px;
   border: none;
+  width: 500px
 }
-  
+
 .topnav .search-container button {
-  float: right;
+  float: left;
   padding: 6px 10px;
-  margin-top: 9px;
-  margin-right: 16px;
+  margin-top: 8.5px;
+  margin-left: 20px;
   background: #ddd;
-  font-size: 17px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
 }
@@ -80,14 +81,24 @@ body {
   background: #ccc;
 }
 
+.topnav input[type=text] {
+  border: 1px solid #ccc;  
+}
+
 /* <!-- To keep the page consistent -->  */
+
+@media screen and (max-width: 800px) {
+  .topnav input[type=text] {
+    width: 200px;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .topnav { 
-      position: relative; /* Fixed turns into relative when zoomed to scroll down*/
+    position: relative; /* Fixed turns into relative when zoomed to scroll down*/
   }
   .topnav .search-container {
-      float: none;
+    float: none;
   }
   .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
@@ -97,8 +108,11 @@ body {
     margin: 0;
     padding: 14px;
   }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
+  h1 {
+    margin: 0%;
+  }
+  p {
+    margin: 0%;
   }
 }
 
@@ -112,14 +126,15 @@ main {
 
 h1 {
   font-family: "Arial", sans-serif;
-  padding-left: 20px;
+  margin-left: 35px;
+  margin-right: 40px;
 }
 
 p {
   padding-top: 5px;
   font-size: 17px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 img {
@@ -152,12 +167,20 @@ img {
   /* Exists to put a gap between the nav and paragraphs*/
 }
 
-/* CSS for Artstyle */
+/* CSS for Content Pages */
 
 .art-image img{
-  border:#23130c 4px outset; 
+  border:#23130c 2px outset; 
   float: left; 
   width: 20%; 
-  margin-top: 0px;
-  margin: 15px;
+  margin: 18px 15px 10px 50px
+}
+
+.medium-image img{
+  margin-left: 20px; 
+  border: #000000 2px outset; 
+  height:10%;
+  width:50%;
+  object-fit: contain;
+  object-position: 15% 100"
 }

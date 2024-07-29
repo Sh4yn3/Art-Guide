@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<title> {{artist[1]}} - Artist </title>
+
+<p class="space">
+    <a href="/" class="link">Home</a><a href="/Artist"class="link"> / Artists </a> / {{artist[1]}}
+</p>
+
+<h1> {{artist[1]}} </h1>
+
+<hr/>
+
+
+<div class="art-image">
+    <img src= "{{artist[3]}}">
+</div>
+
+<p>
+    {{artist[3]}}
+</p>
+    
+{% endblock %}

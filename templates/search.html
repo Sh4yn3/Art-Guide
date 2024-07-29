@@ -3,13 +3,12 @@
 {% block content %}
 
 <h1 class="space">Search Results</h1>
-
-<p>
-    {% for result in results %}
-        <li>{{ result }}</li>
-    {% endfor %}
-
-    > <a href="/" class="link">Go back</a>
-</p>
-
+    <ul>
+        {% for result in results %}
+            <li>
+                <a href="/{{ result[0]|lower }}/{{ result[1] }}">{{ result[2] }} ({{ result[0] }})</a>
+                <p>{{ result[3] }}</p>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
