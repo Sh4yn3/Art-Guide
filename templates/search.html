@@ -1,14 +1,50 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
-<h1 class="space">Search Results</h1>
-    <ul>
-        {% for result in results %}
-            <li>
-                <a href="/{{ result[0]|lower }}/{{ result[1] }}">{{ result[2] }} ({{ result[0] }})</a>
-                <p>{{ result[3] }}</p>
-            </li>
-        {% endfor %}
-    </ul>
+    <h1 class="space">Search Results</h1>
+    
+    {% if results.artstyles %}
+        <h2>Art Styles</h2>
+        <div class="results-section">
+            {% for artstyle in results.artstyles %}
+                <a href="/artstyle/{{ artstyle[0] }}" class="result-item">
+                    <img src="/static/images/{{ artstyle[3] }}" alt="{{ artstyle[1] }}" class="thumbnail">
+                    <div class="result-info">
+                        <h3 class="result-title">{{ artstyle[1] }}</h3>
+                        <p class="result-description">{{ artstyle[2] }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    {% if results.mediums %}
+        <h2>Mediums</h2>
+        <div class="results-section">
+            {% for medium in results.mediums %}
+                <a href="/medium/{{ medium[0] }}" class="result-item">
+                    <img src="/static/images/{{ medium[3] }}" alt="{{ medium[1] }}" class="thumbnail">
+                    <div class="result-info">
+                        <h3 class="result-title">{{ medium[1] }}</h3>
+                        <p class="result-description">{{ medium[2] }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    {% if results.artists %}
+        <h2>Artists</h2>
+        <div class="results-section">
+            {% for artist in results.artists %}
+                <a href="/artist/{{ artist[0] }}" class="result-item">
+                    <img src="/static/images/{{ artist[4] }}" alt="{{ artist[1] }}" class="thumbnail">
+                    <div class="result-info">
+                        <h3 class="result-title">{{ artist[1] }}</h3>
+                        <p class="result-description">{{ artist[2] }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}    
 {% endblock %}

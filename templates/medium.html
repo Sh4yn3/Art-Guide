@@ -1,19 +1,15 @@
 {% extends 'layout.html' %}
 {% block content %}
-<title> {{medium[0]}} - Medium </title>
+<title> {{medium[1]}} - Medium </title>
 
 <p class="space">   
     <a href="/" class="link">Home</a> / Artstyles
 </p>
 
-<h1> {{medium[0]}} </h1>
-
-<div class="medium-image">
-    <img src= "{{medium[2]}}">
-</div>
+<h1> {{medium[1]}} </h1>
 
 <hr/>
-    <img src ="{{medium[2]}}" 
+    <img src ="{{medium[3]}}" 
     style="margin-left: 20px; border: #000000 2px outset; 
     height:10%; width:50%; object-fit: contain;
     object-position: 15% 100"

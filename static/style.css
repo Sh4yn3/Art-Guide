@@ -109,10 +109,16 @@ body {
     padding: 14px;
   }
   h1 {
-    margin: 0%;
+    margin: 10px !important;
+  }
+  h2 {
+    margin: 15px !important;
   }
   p {
-    margin: 0%;
+    margin: 5px !important;
+  }
+  main{
+    margin: 5px !important;
   }
 }
 
@@ -129,6 +135,14 @@ h1 {
   margin-left: 35px;
   margin-right: 40px;
 }
+
+h2 {
+  font-family: "Arial", sans-serif;
+  color: #ca4a28;
+  margin-left: 35px;
+  margin-right: 40px;
+}
+
 
 p {
   padding-top: 5px;
@@ -151,9 +165,9 @@ img {
 }
 
 .container img{
-    object-fit: cover;
-    width: 100%;
-    height: 240px;
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
 }
 
 .link{
@@ -183,4 +197,104 @@ img {
   width:50%;
   object-fit: contain;
   object-position: 15% 100"
+}
+
+/* For the Search Results */
+
+.results-section {
+  margin-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.result-item {
+  display: flex;
+  width: calc(33.333% - 20px);
+  background: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-decoration: none;
+}
+
+.result-item:hover {
+  transform: scale(1.02);
+}
+
+.thumbnail {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  border-right: 1px solid #ddd;
+}
+
+.result-info {
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-title {
+  font-size: 1.1em;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.result-title:hover {
+  color: #b63f1e;
+}
+
+.result-description {
+  font-size: 0.9em;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3; /* Standard property */
+  -webkit-box-orient: vertical; /* WebKit-based browsers */
+  -moz-box-orient: vertical; /* Mozilla-based browsers */
+  -ms-box-orient: vertical; /* Microsoft browsers */
+  box-orient: vertical; /* General support */
+}
+
+/* Responsive styles for Search  */
+@media (max-width: 768px) {
+  .results-section{
+    margin: 18px !important;
+  }
+  .result-item {
+    width: calc(50% - 20px); /* Two items per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .result-item {
+    width: 100%; /* Full width on mobile phones */
+    flex-direction: column; /* Stack items vertically on mobile */
+  }
+  
+  .thumbnail {
+    width: 100%; /* Full width for images on mobile */
+    border-right: none; /* Remove border on mobile */
+  }
+
+  .result-info {
+    padding: 10px;
+  }
+
+  .result-title {
+    font-size: 1em; /* Smaller title font on mobile */
+  }
+
+  .result-description {
+    font-size: 0.8em; /* Smaller description font on mobile */
+  }
 }

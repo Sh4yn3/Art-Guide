@@ -1,14 +1,50 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template
 import sqlite3
 
 app = Flask(__name__)
-
 DATABASE = 'ARTGUIDE.db'
 
 
 def get_db():
     conn = sqlite3.connect(DATABASE)
     return conn
+
+
+def query_database(search_term):
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Query for ArtStyles
+
+    cursor.execute("""
+        SELECT id, name, description
+        FROM ArtStyles
+        WHERE name LIKE ?
+    """, ('%' + search_term + '%',))
+    artstyles = cursor.fetchall()
+
+    # Query for Mediums
+    cursor.execute("""
+        SELECT id, name, description
+        FROM Mediums
+        WHERE name LIKE ?
+    """, ('%' + search_term + '%',))
+    mediums = cursor.fetchall()
+
+    # Query for Artists
+    cursor.execute("""
+        SELECT id, name, description
+        FROM Artists
+        WHERE name LIKE ?
+    """, ('%' + search_term + '%',))
+    artists = cursor.fetchall()
+
+    conn.close()
+    return {
+        'artstyles': artstyles,
+        'mediums': mediums,
+        'artists': artists
+    }
 
 
 @app.route('/')
@@ -45,7 +81,7 @@ def artstyle(id):
 def medium(id):
     conn = get_db()
     cur = conn.cursor()
-    cur.execute('SELECT * WHERE Mediums WHERE id = ?', (id,))
+    cur.execute("SELECT * FROM Mediums WHERE id = ?", (id,))
     medium = cur.fetchone()
     conn.close()
     return render_template('medium.html', medium=medium)
@@ -61,42 +97,11 @@ def artist(id):
     return render_template('artist.html', artist=artist)
 
 
-# For a working Search Function
-
 @app.route('/search', methods=['POST'])
 def search():
     search_term = request.form['search_term']
     results = query_database(search_term)
     return render_template('search.html', results=results)
-
-
-def query_database(search_term):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute(
-        '''
-        SELECT 'ArtStyle' AS type, id, name, description
-        FROM ArtStyles  WHERE name LIKE ?
-        UNION
-        SELECT 'Medium' AS type, id, name, description
-        FROM Mediums WHERE name LIKE ?
-        UNION
-        SELECT 'Artist' AS type, id, name, description
-        FROM Artists
-        WHERE name LIKE ?
-        ''', ('%' + search_term + '%',
-              '%' + search_term + '%',
-              '%' + search_term + '%'))
-    results = cursor.fetchall()
-    conn.close()
-    return results
-
-
-# Test
-
-@app.route('/test')
-def test():
-    return render_template('test.html')
 
 
 if __name__ == '__main__':
