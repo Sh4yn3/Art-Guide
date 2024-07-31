@@ -172,7 +172,8 @@ img {
 
 .link{
   text-decoration: none;
-  color: rgb(91, 87, 87)
+  color: #ca4a28;
+  font-weight: bold;
 }
 
 
@@ -191,12 +192,29 @@ img {
 }
 
 .medium-image img{
-  margin-left: 20px; 
+  display: block;
+  margin-left: 20px;
   border: #000000 2px outset; 
   height:10%;
   width:50%;
   object-fit: contain;
   object-position: 15% 100"
+}
+
+.medium-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.center{
+  text-align: center;
 }
 
 /* For the Search Results */

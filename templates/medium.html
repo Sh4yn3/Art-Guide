@@ -3,20 +3,20 @@
 <title> {{medium[1]}} - Medium </title>
 
 <p class="space">   
-    <a href="/" class="link">Home</a> / Artstyles
+    <a href="/" class="link">Home</a> / <a href="/medium" class="link">Mediums </a>/ {{medium[1]}} 
 </p>
 
-<h1> {{medium[1]}} </h1>
-
-<hr/>
-    <img src ="{{medium[3]}}" 
-    style="margin-left: 20px; border: #000000 2px outset; 
-    height:10%; width:50%; object-fit: contain;
-    object-position: 15% 100"
-    />
 <hr/>
 
-    <p><font size="2%"> {{medium[1]}} </font></main>
+<div class="medium-container" class="medium-image">
+    <img src="{{medium[3]}}" class="medium-image"/>
+    <div class="bottom-left">
+        <h2> {{medium[1]}} </h2> 
+</div>
+
+<p>
+    {{medium[1]}} 
+</p>
 
     
 {% endblock %}
