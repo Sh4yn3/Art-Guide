@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style> 
-input[type=text] {
-  width: 130px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
+{% extends "layout.html" %}
+{% block content %}
+<title> Mediums </title>
 
-input[type=text]:focus {
-  width: 100%;
-}
-</style>
-</head>
-<body>
+<hr/>
 
-<p>Animated search form:</p>
+<div class="container">
+    <img src= "static/images/MediumBanner.jpg" alt="medium banner"/>
+</div>
 
-<form>
-  <input type="text" name="search" placeholder="Search..">
-</form>
+<hr/>
 
-</body>
-</html>
+<p>
+    <a href="/" class="link">Home</a> / Mediums
+</p>
+
+<div class="mediums-nav-container">
+    {% for medium in mediums %}
+    <a href="/medium/{{medium[0]}}" class="medium-link">
+        <div class="medium-item">
+            <img src="{{medium[3]}}" alt="{{medium[1]}}" class="medium-image">
+            <div class="medium-info">
+                <h2> {{medium[1]}} </h2>
+                <p> {{medium[2]}} </p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{%endblock%}

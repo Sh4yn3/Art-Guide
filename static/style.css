@@ -14,6 +14,7 @@ body {
   width: 100%;
   background-color: #ca4a28;
   box-shadow: 1px 2px 4px black;
+  z-index: 1000;
 }
   
 .topnav a {
@@ -85,7 +86,7 @@ body {
   border: 1px solid #ccc;  
 }
 
-/* <!-- To keep the page consistent -->  */
+/* <!-- Responsive Zooms for Top Navigation -->  */
 
 @media screen and (max-width: 800px) {
   .topnav input[type=text] {
@@ -93,7 +94,13 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
+  .topnav input[type=text] {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .topnav { 
     position: relative; /* Fixed turns into relative when zoomed to scroll down*/
   }
@@ -191,30 +198,68 @@ img {
   margin: 18px 15px 10px 50px
 }
 
-.medium-image img{
+.medium-container {
   display: block;
-  margin-left: 20px;
-  border: #000000 2px outset; 
-  height:10%;
-  width:50%;
+  margin: 20px;
+  border: #000000 2px outset;
+  position: relative;
+  color: white;
+  width: 50%;
   object-fit: contain;
-  object-position: 15% 100"
+  z-index: 1;
 }
 
-.medium-container {
-  position: relative;
-  text-align: center;
-  color: white;
+.medium-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .bottom-left {
   position: absolute;
   bottom: 8px;
   left: 16px;
+  size: 15px;
+  z-index: 2;
 }
 
 .center{
   text-align: center;
+}
+
+/* Specific Container Classes */
+.artstyle-nav-container, .mediums-nav-container, .artist-nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+
+.artstyle-link, .medium-link, .artist-link {
+  width: 20%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.artstyle-item, .medium-item, .artist-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  margin-bottom: 40px;
+}
+
+.artstyle-item:hover, .medium-item:hover, .artist-item:hover {
+  transform: scale(1.05);
+}
+
+.artstyle-image, .medium-image, .artist-image {
+  width: 100%;
+  height: auto;
+}
+
+.artstyle-info, .medium-info, .artist-info {
+  padding: 5px;
 }
 
 /* For the Search Results */
@@ -252,7 +297,6 @@ img {
 .result-info {
   text-decoration: none;
   padding: 10px;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -261,7 +305,7 @@ img {
   font-size: 1.1em;
   color: #333;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .result-title:hover {
@@ -269,6 +313,7 @@ img {
 }
 
 .result-description {
+  margin: 2px;
   font-size: 0.9em;
   color: #666;
   overflow: hidden;
@@ -276,11 +321,10 @@ img {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  line-clamp: 3; /* Standard property */
+  line-clamp: 3; /* Standard */
   -webkit-box-orient: vertical; /* WebKit-based browsers */
   -moz-box-orient: vertical; /* Mozilla-based browsers */
   -ms-box-orient: vertical; /* Microsoft browsers */
-  box-orient: vertical; /* General support */
 }
 
 /* Responsive styles for Search  */

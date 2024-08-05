@@ -54,17 +54,32 @@ def home():
 
 @app.route('/artstyle')
 def artstylenav():
-    return render_template('artstylenav.html')
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM ArtStyles")
+    artstyles = cur.fetchall()
+    conn.close()
+    return render_template('artstylenav.html', artstyles=artstyles)
 
 
 @app.route('/medium')
 def mediumsnav():
-    return render_template('mediumsnav.html')
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM Mediums")
+    mediums = cur.fetchall()
+    conn.close()
+    return render_template('mediumsnav.html', mediums=mediums)
 
 
 @app.route('/artist')
 def artistnav():
-    return render_template('artistnav.html')
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM Artists")
+    artists = cur.fetchall()
+    conn.close()
+    return render_template('artistnav.html', artists=artists)
 
 
 @app.route('/artstyle/<int:id>')

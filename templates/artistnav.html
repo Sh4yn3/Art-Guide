@@ -15,4 +15,18 @@
     <a href="/" class="link">Home</a> / Artists
 </p>
 
+<div class="artist-nav-container">
+    {% for artist in artists %}
+    <a href="/artist/{{artist[0]}}" class="artist-link">
+        <div class="artist-item">
+            <img src="{{artist[3]}}" alt="{{artist[1]}}" class="artist-image">
+            <div class="artist-info">
+                <h2> {{artist[1]}} </h2>
+                <p> {{artist[2]}} </p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
 {%endblock%}
