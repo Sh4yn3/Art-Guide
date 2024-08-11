@@ -6,16 +6,33 @@
     <a href="/" class="link">Home</a> / <a href="/artstyle" class="link">Artstyles </a>/ {{artstyle[1]}} 
 </p>
 
+<body>
 <h1> {{artstyle[1]}} </h1>
 
 <hr/>
 
-<div class="art-image">
-    <img src= "{{artstyle[3]}}">
+<div class="content-container"> 
+    <div class="table-of-contents">
+        <img src="{{artstyle[3]}}">
+        <div class="toc-title"> 
+             <h2> {{artstyle[1]}} </h2>
+        </div>
+        <div class="toc-chapters">
+            <p> Summary </p>
+            <p> Key Techniques </p>
+            <p> History </p>
+            <p> Artworks </p>
+        </div>
+    </div>
+    <div class="main-content"> 
+        <h2> Summary </h2>
+        <div class="border-block"></div>
+        <p> {{artstyle[2]}} </p>
+        
+    </div>
 </div>
 
-<p>
-    {{artstyle[2]}}
-</p>
-    
+
+</body>
+
 {% endblock %}

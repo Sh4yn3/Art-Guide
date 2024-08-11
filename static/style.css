@@ -139,8 +139,7 @@ main {
 
 h1 {
   font-family: "Arial", sans-serif;
-  margin-left: 35px;
-  margin-right: 40px;
+  margin: 30px 40px 30px 33px;
 }
 
 h2 {
@@ -154,7 +153,7 @@ h2 {
 p {
   padding-top: 5px;
   font-size: 17px;
-  margin-left: 50px;
+  margin-left: 35px;
   margin-right: 50px;
 }
 
@@ -191,7 +190,7 @@ img {
 
 /* CSS for Content Pages */
 
-.art-image img{
+.art-image{
   border:#23130c 2px outset; 
   float: left; 
   width: 20%; 
@@ -228,8 +227,29 @@ img {
   text-align: center;
 }
 
-/* Specific Container Classes */
-.artstyle-nav-container, .mediums-nav-container, .artist-nav-container {
+* {
+  box-sizing: border-box;
+}
+
+/* Navigation Pages */
+.artstyle-nav-container, .artist-nav-container {
+  margin: 10px 0px 0px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+
+.artstyle-item, .medium-item, .artist-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  margin: 10px;
+}
+
+.mediums-nav-container {
+  margin-left: 30px;
+  margin-right: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; 
@@ -239,14 +259,6 @@ img {
   width: 20%;
   text-decoration: none;
   color: inherit;
-}
-
-.artstyle-item, .medium-item, .artist-item {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
-  transition: transform 0.3s;
-  margin-bottom: 40px;
 }
 
 .artstyle-item:hover, .medium-item:hover, .artist-item:hover {
@@ -359,4 +371,69 @@ img {
   .result-description {
     font-size: 0.8em; /* Smaller description font on mobile */
   }
+}
+
+/* Responsive styles for Medium Navigation */
+@media screen and (max-width: 768px) {
+  .medium-link, .artstyle-link, .artist-link {
+    width: 48%; /* Two items per row on tablets */
+    margin: 1%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .medium-link, .artstyle-link, .artist-link {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 10px; /* Add spacing between items */
+  }
+
+  .medium-item, .artstyle-item, .artist-item {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center text on mobile */
+  }
+
+  .medium-image, .artstyle-item, .artist-item {
+    width: 100%; /* Full width image on mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .medium-info, .artstyle-info, .artist-info {
+    padding: 10px;
+  }
+
+  .medium-info h2, .artstyle-info h2, .artist-info h2 {
+    font-size: 1.2em; /* Smaller title font on mobile */
+  }
+
+  .medium-info p, .artstyle-info p, .artist-info p {
+    font-size: 0.9em; /* Smaller description font on mobile */
+  }
+}
+
+/* Grid Layout */
+
+.content-container {
+  margin: 25px 25px 0px 25px;
+  display: grid;
+  grid-template-columns: 20% 80%; 
+}
+
+.table-of-contents {
+  margin: 10px 10px 5px 10px;
+}
+
+.toc-title{
+  background-color: #b63f1e;
+  padding: 0.5px;
+}
+
+.toc-title h2{
+  text-align: center;
+  color:#f9f9f9;
+}
+
+.border-block {
+  background-color: #ca4a28;
+  padding: 2px;
+  margin: 0px 35px 0px 35px;
 }
