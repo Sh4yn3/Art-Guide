@@ -17,7 +17,7 @@ def query_database(search_term):
     # Query for ArtStyles
 
     cursor.execute("""
-        SELECT id, name, description, photo
+        SELECT *
         FROM ArtStyles
         WHERE name LIKE ?
     """, ('%' + search_term + '%',))
@@ -25,7 +25,7 @@ def query_database(search_term):
 
     # Query for Mediums
     cursor.execute("""
-        SELECT id, name, description, photo
+        SELECT *
         FROM Mediums
         WHERE name LIKE ?
     """, ('%' + search_term + '%',))
@@ -33,7 +33,7 @@ def query_database(search_term):
 
     # Query for Artists
     cursor.execute("""
-        SELECT id, name, description, photo
+        SELECT *
         FROM Artists
         WHERE name LIKE ?
     """, ('%' + search_term + '%',))

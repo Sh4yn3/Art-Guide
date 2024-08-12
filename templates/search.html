@@ -8,10 +8,10 @@
         <div class="results-section">
             {% for artstyle in results.artstyles %}
                 <a href="/artstyle/{{artstyle[0]}}" class="result-item">
-                    <img src="{{artstyle[3]}}" alt="{{artstyle[1]}}" class="thumbnail">
+                    <img src="{{artstyle[2]}}" alt="{{artstyle[1]}}" class="thumbnail">
                     <div class="result-info">
                         <h3 class="result-title">{{ artstyle[1] }}</h3>
-                        <p class="result-description">{{ artstyle[2] }}</p>
+                        <p class="result-description">{{ artstyle[3] }}</p>
                     </div>
                 </a>
             {% endfor %}
@@ -23,10 +23,10 @@
         <div class="results-section">
             {% for medium in results.mediums %}
                 <a href="/medium/{{medium[0]}}" class="result-item">
-                    <img src="{{medium[3]}}" alt="{{medium[1]}}" class="thumbnail">
+                    <img src="{{medium[2]}}" alt="{{medium[1]}}" class="thumbnail">
                     <div class="result-info">
                         <h3 class="result-title">{{ medium[1] }}</h3>
-                        <p class="result-description">{{ medium[2] }}</p>
+                        <p class="result-description">{{ medium[3] }}</p>
                     </div>
                 </a>
             {% endfor %}
@@ -38,10 +38,10 @@
         <div class="results-section">
             {% for artist in results.artists %}
                 <a href="/artist/{{ artist[0] }}" class="result-item">
-                    <img src="{{artist[4]}}" alt="{{artist[1]}}" class="thumbnail">
+                    <img src="{{artist[2]}}" alt="{{artist[1]}}" class="thumbnail">
                     <div class="result-info">
                         <h3 class="result-title">{{ artist[1] }}</h3>
-                        <p class="result-description">{{ artist[2] }}</p>
+                        <p class="result-description">{{ artist[3] }}</p>
                     </div>
                 </a>
             {% endfor %}
