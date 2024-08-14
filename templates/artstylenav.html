@@ -14,18 +14,15 @@
 <p>   
     <a href="/" class="link">Home</a> / Artstyles
 </p>
-
-<div class="artstyle-nav-container">
+<div class="results-section">
     {% for artstyle in artstyles %}
-    <a href="/artstyle/{{artstyle[0]}}" class="artstyle-link">
-        <div class="artstyle-item">
-            <img src="{{artstyle[2]}}" alt="{{artstyle[1]}}" class="artstyle-image">
-            <div class="artstyle-info">
-                <h2> {{artstyle[1]}} </h2>
-                <p> {{artstyle[3]}} </p>
+        <a href="/artstyle/{{artstyle[0]}}" class="result-item">
+            <img src="{{artstyle[2]}}" alt="{{artstyle[1]}}" class="thumbnail">
+            <div class="result-info">
+                <h3 class="result-title">{{ artstyle[1] }}</h3>
+                <p class="result-description">{{ artstyle[3] }}</p>
             </div>
-        </div>
-    </a>
+        </a>
     {% endfor %}
 </div>
 

@@ -15,17 +15,15 @@
     <a href="/" class="link">Home</a> / Artists
 </p>
 
-<div class="artist-nav-container">
+<div class="results-section">
     {% for artist in artists %}
-    <a href="/artist/{{artist[0]}}" class="artist-link">
-        <div class="artist-item">
-            <img src="{{artist[2]}}" alt="{{artist[1]}}" class="artist-image">
-            <div class="artist-info">
-                <h2> {{artist[1]}} </h2>
-                <p> {{artist[3]}} </p>
+        <a href="/artist/{{artist[0]}}" class="result-item">
+            <img src="{{artist[2]}}" alt="{{artist[1]}}" class="thumbnail">
+            <div class="result-info">
+                <h3 class="result-title">{{ artist[1] }}</h3>
+                <p class="result-description">{{ artist[3] }}</p>
             </div>
-        </div>
-    </a>
+        </a>
     {% endfor %}
 </div>
 

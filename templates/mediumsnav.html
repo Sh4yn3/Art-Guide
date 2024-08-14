@@ -14,17 +14,15 @@
     <a href="/" class="link">Home</a> / Mediums
 </p>
 
-<div class="mediums-nav-container">
+<div class="results-section">
     {% for medium in mediums %}
-    <a href="/medium/{{medium[0]}}" class="medium-link">
-        <div class="medium-item">
-            <img src="{{medium[2]}}" alt="{{medium[1]}}" class="medium-image">
-            <div class="medium-info">
-                <h2> {{medium[1]}} </h2>
-                <p> {{medium[3]}} </p>
+        <a href="/medium/{{medium[0]}}" class="result-item">
+            <img src="{{medium[2]}}" alt="{{medium[1]}}" class="thumbnail">
+            <div class="result-info">
+                <h3 class="result-title">{{ medium[1] }}</h3>
+                <p class="result-description">{{ medium[3] }}</p>
             </div>
-        </div>
-    </a>
+        </a>
     {% endfor %}
 </div>
 

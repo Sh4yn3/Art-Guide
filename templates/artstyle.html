@@ -18,32 +18,39 @@
              <h2> {{artstyle[1]}} </h2>
         </div>
         <div class="toc-chapters">
-            <p> Summary </p>
-            <p> Key Details </p>
-            <p> History </p>
-            <p> Artworks </p>
+            <li><a href="#summary" class="toc-link">Summary</a></li>
+            <li><a href="#key-details" class="toc-link">Key Details</a></li>
+            <li><a href="#history" class="toc-link">History</a></li>
+            <li><a href="#artworks" class="toc-link">Artworks</a></li>
         </div>
     </div>
     <div class="main-content"> 
-        
-        <h2> What is {{artstyle[1]}}? </h2>
-        <div class="border-block"></div>
-        <p> {{artstyle[3]}} </p>
-        <div class="space"></div>
+        <section id="summary">
+            <h2> What is {{artstyle[1]}}? </h2>
+            <div class="border-block"></div>
+            <p> {{artstyle[3]}} </p>
+            <div class="space"></div>
+        </section>
 
-        <h2> Key Details </h2>
-        <div class="border-block"></div>
-        <p> Insert Information </p>
-        <div class="space"></div>
+        <section id="key-details">
+            <h2> Key Details </h2>
+            <div class="border-block"></div>
+            <p> {{artstyle[4]}} </p>
+            <div class="space"></div>
+        </section>      
 
-        <h2> History of {{artstyle[1]}} </h2>
-        <div class="border-block"></div>
-        <p> Insert Information </p>
-        <div class="space"></div>
+        <section id="history">
+            <h2> History of {{artstyle[1]}} </h2>
+            <div class="border-block"></div>
+            <p> {{artstyle[5]}} </p>
+            <div class="space"></div>
+        </section>
 
-        <h2> Examples of {{artstyle[1]}} </h2>
-        <div class="border-block"></div>
-        <p> Insert Portfolio of Images </p>
+        <section id="artworks">
+            <h2> Examples of {{artstyle[1]}} </h2>
+            <div class="border-block"></div>
+            <p> Insert Portfolio of Images </p>
+        </section>
         
     </div>
 </div>
