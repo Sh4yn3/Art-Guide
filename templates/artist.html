@@ -11,12 +11,48 @@
 <hr/>
 
 
-<div class="art-image">
-    <img src= "{{artist[2]}}">
-</div>
+<div class="content-container"> 
+    <div class="table-of-contents">
+        <img src="{{artist[2]}}">
+        <div class="toc-title"> 
+             <h2> {{artist[1]}} </h2>
+        </div>
+        <div class="toc-chapters">
+            <li><a href="#summary" class="toc-link">Summary</a></li>
+            <li><a href="#accomplishments" class="toc-link">Accomplishments</a></li>
+            <li><a href="#biography" class="toc-link">History</a></li>
+            <li><a href="#artworks" class="toc-link">Artworks</a></li>
+        </div>
+    </div>
+    <div class="main-content"> 
+        <section id="summary">
+            <h2> Who is {{artist[1]}}? </h2>
+            <div class="border-block"></div>
+            <p> {{artist[3]}} </p>
+            <div class="space"></div>
+        </section>
 
-<p>
-    {{artist[3]}}
-</p>
+        <section id="accomplishments">
+            <h2> Accomplishments of {{artist[1]}} </h2>
+            <div class="border-block"></div>
+            <p> {{artist[4]|safe}} </p>
+            <div class="space"></div>
+        </section>      
+
+        <section id="biography">
+            <h2> Biography of {{artist[1]}} </h2>
+            <div class="border-block"></div>
+            <p> {{artist[5]}} </p>
+            <div class="space"></div>
+        </section>
+
+        <section id="artworks">
+            <h2> Examples of Artworks Done by {{artist[1]}} </h2>
+            <div class="border-block"></div>
+            <p> Insert Portfolio of Images </p>
+        </section>
+        
+    </div>
+</div>
     
 {% endblock %}

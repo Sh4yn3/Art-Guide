@@ -8,16 +8,40 @@
 
 <hr/>
 
-<div class="medium-container">
-    <img src="{{medium[3]}}" alt="{{medium[3]}}" class="medium-image"/>
-    <div class="bottom-left">
-        <h2> {{medium[1]}} </h2> 
+<div class="content-container"> 
+    <div class="table-of-contents">
+        <img src="{{medium[2]}}">
+        <div class="toc-title"> 
+             <h2> {{medium[1]}} </h2>
+        </div>
+        <div class="toc-chapters">
+            <li><a href="#summary" class="toc-link">Summary</a></li>
+            <li><a href="#techniques" class="toc-link">Techniques</a></li>
+            <li><a href="#artworks" class="toc-link">Artworks</a></li>
+        </div>
+    </div>
+    <div class="main-content"> 
+        <section id="summary">
+            <h2> What is {{medium[1]}}? </h2>
+            <div class="border-block"></div>
+            <p> {{medium[3]}} </p>
+            <div class="space"></div>
+        </section>
+
+        <section id="techniques">
+            <h2> Techniques </h2>
+            <div class="border-block"></div>
+            <p> {{medium[4]|safe}} </p>
+            <div class="space"></div>
+        </section>      
+
+        <section id="artworks">
+            <h2> Examples of {{medium[1]}} </h2>
+            <div class="border-block"></div>
+            <p> Insert Portfolio of Images </p>
+        </section>
+        
     </div>
 </div>
-
-<p>
-    {{medium[1]}} 
-</p>
-
     
 {% endblock %}

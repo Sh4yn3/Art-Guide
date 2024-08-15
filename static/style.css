@@ -1,7 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100%
+  height: 100%;
+  background-color: #f7f6f5; 
+
 }
 
 /* <!--Fixed Navigation Bar--> */
@@ -367,7 +369,7 @@ img {
   }
 }
 
-/* Grid Layout */
+/* Content Layout */
 
 .content-container {
   margin: 25px 25px 0px 25px;
@@ -378,7 +380,7 @@ img {
 .table-of-contents {
   margin: 10px 10px 5px 10px;
   position: sticky;
-  top: 0; 
+  top: 85px; 
   align-self: start;
 }
 
@@ -460,14 +462,20 @@ section:target h2 {
 section:target ~ .table-of-contents a[href="#summary"]:before,
 section:target ~ .table-of-contents a[href="#key-details"]:before,
 section:target ~ .table-of-contents a[href="#history"]:before,
-section:target ~ .table-of-contents a[href="#artworks"]:before {
+section:target ~ .table-of-contents a[href="#artworks"]:before,
+section:target ~ .table-of-contents a[href="#techniques"]:before,
+section:target ~ .table-of-contents a[href="#biography"]:before,
+section:target ~ .table-of-contents a[href="#accomplishments"]:before {
   background-color: #b63f1e;
 }
 
 section:target ~ .table-of-contents a[href="#summary"],
 section:target ~ .table-of-contents a[href="#key-details"],
 section:target ~ .table-of-contents a[href="#history"],
-section:target ~ .table-of-contents a[href="#artworks"] {
+section:target ~ .table-of-contents a[href="#artworks"], 
+section:target ~ .table-of-contents a[href="#techniques"],
+section:target ~ .table-of-contents a[href="#biography"],
+section:target ~ .table-of-contents a[href="#accomplishments"] {
   color: #b63f1e;
 }
 
