@@ -6,10 +6,10 @@ body {
 
 }
 
-/* <!--Fixed Navigation Bar--> */
-
+/* Fixed Navigation Bar */
 .topnav {
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,116 +18,109 @@ body {
   box-shadow: 1px 2px 4px black;
   z-index: 1000;
 }
-  
+
 .topnav a {
   font-family: "Grandstander", cursive;
-  float: left;
-  display: block;
   color: #ffffff;
   text-align: center;
   padding: 18px 16px;
   text-decoration: none;
   font-size: 17px;
+  flex: 0 1 auto;
 }
-  
+
 .topnav a:hover {
   background-color: #b63f1e;
   color: black;
 }
-  
+
 .topnav a.logo {
   background-color: #ad2210;
   color: white;
   transition: all 0.3s ease;
   border: none;
-  display: inline-block;
   padding: 2px 16px;
-  vertical-align: left;
-  overflow: hidden;
-  text-decoration: none;
+  display: flex;
+  align-items: center;
   text-align: left;
   box-sizing: border-box;
-  flex:0 0 auto;
 }
+
 .topnav img {
-  max-height: 45px; 
+  max-height: 45px;
   max-width: 45px;
 }
 
-.topnav a.logo img:hover:not(.active){
+.topnav a.logo img:hover:not(.active) {
   filter: brightness(85%);
 }
 
 .topnav .search-container {
-  float: left;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
-  
+
 .topnav input[type=text] {
   padding: 6px;
-  margin-top: 8.1px;
   font-size: 17px;
   border: none;
-  width: 500px
+  width: 500px;
+  border: 1px solid #ccc;
 }
 
 .topnav .search-container button {
-  float: left;
-  padding: 6px 10px;
-  margin-top: 8.5px;
-  margin-left: 20px;
+  padding: 7px 10px;
   background: #ddd;
   font-size: 18px;
   border: none;
   cursor: pointer;
+  margin: 0px 20px 0px -4px;
 }
+
 .topnav .search-container button:hover {
   background: #ccc;
 }
 
 .topnav input[type=text] {
-  border: 1px solid #ccc;  
+  border: 1px solid #ccc;
 }
 
-/* <!-- Responsive Zooms for Top Navigation -->  */
-
-@media screen and (max-width: 800px) {
-  .topnav input[type=text] {
-    width: 200px;
-  }
-}
-
+/* Responsive Adjustments */
 @media screen and (max-width: 1000px) {
-  .topnav input[type=text] {
-    width: 300px;
+  .topnav input#query {
+    width: 900px;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .topnav { 
-    position: relative; /* Fixed turns into relative when zoomed to scroll down*/
+  .topnav {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
   }
+
   .topnav .search-container {
-    float: none;
+    width: 100%;
+    margin: 0;
   }
+
   .topnav a, .topnav input[type=text], .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
     width: 100%;
     margin: 0;
     padding: 14px;
+    text-align: left;
   }
-  h1 {
-    margin: 10px !important;
+
+  .topnav input[type=text] {
+    width: 100%;
   }
-  h2 {
-    margin: 15px !important;
-  }
-  p {
-    margin: 5px !important;
-  }
-  main{
-    margin: 5px !important;
+}
+
+
+@media screen and (max-width: 900px) and (min-width: 850px) {
+  .topnav input#query {
+      width: 400px;
   }
 }
 
@@ -187,17 +180,10 @@ img {
 
 .space{
   margin-top:50px
-  /* Exists to put a gap between the nav and paragraphs*/
+  /* Puts a gap between the nav and paragraphs*/
 }
 
 /* CSS for Content Pages */
-
-.art-image{
-  border:#23130c 2px outset; 
-  float: left; 
-  width: 20%; 
-  margin: 18px 15px 10px 50px
-}
 
 .medium-container {
   display: block;
@@ -371,14 +357,23 @@ img {
 
 /* Content Layout */
 
+.main-content ul.key { 
+  list-style-type: square;
+  margin: 20px 40px 0px 10px;
+}
+
+.main-content li { 
+  padding-bottom: 20px;
+}
+
 .content-container {
-  margin: 25px 25px 0px 25px;
+  margin: 55px 25px 0px 25px;
   display: grid;
   grid-template-columns: 20% 80%; 
 }
 
 .table-of-contents {
-  margin: 10px 10px 5px 10px;
+  margin: 0px 10px 5px 10px;
   position: sticky;
   top: 85px; 
   align-self: start;
@@ -388,7 +383,7 @@ img {
   object-fit: cover;
   width: 100%;
   height: 200px;
-  object-position: 100% 10%;
+  object-position: 100% 20%;
 }
 
 .toc-title {
@@ -481,6 +476,6 @@ section:target ~ .table-of-contents a[href="#accomplishments"] {
 
 section {
   position: relative;
-  padding-top: 70px; 
-  margin-top: -70px;
+  padding-top: 66px; 
+  margin-top: -100px;
 }

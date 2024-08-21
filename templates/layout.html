@@ -28,13 +28,24 @@
         <a href="/artstyle">Artstyles</a>
         <a href="/artist">Artists</a>
         <div class="search-container">
-            <form action="/search" method="POST">
-                <input type="text" id="query" name="search_term" placeholder="Search..">
+            <form action="/search" method="POST" onsubmit="return validateSearch()">
+                <input type="text" id="query" name="search_term" placeholder=" Search..">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
 </nav>
+
+<script>
+    function validateSearch() {
+      var query = document.getElementById("query").value.trim();
+      if (query === "") {
+        alert("Please enter a search term.");
+        return false; // Prevent form submission
+      }
+      return true; // Allow form submission if the search is valid
+    }
+</script>
 
 <div id="results"></div>
 
