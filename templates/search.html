@@ -23,10 +23,10 @@
         <div class="results-section">
             {% for medium in results.mediums %}
                 <a href="/medium/{{medium[0]}}" class="result-item">
-                    <img src="{{medium[2]}}" alt="{{medium[1]}}" class="thumbnail">
+                    <img src="{{medium[2]}}" alt="{{medium[3]}}" class="thumbnail">
                     <div class="result-info">
                         <h3 class="result-title">{{ medium[1] }}</h3>
-                        <p class="result-description">{{ medium[3] }}</p>
+                        <p class="result-description">{{ medium[4] }}</p>
                     </div>
                 </a>
             {% endfor %}

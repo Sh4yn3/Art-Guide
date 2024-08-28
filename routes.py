@@ -5,6 +5,8 @@ app = Flask(__name__)
 DATABASE = 'ARTGUIDE.db'
 
 
+# DATABASE
+
 def get_db():
     conn = sqlite3.connect(DATABASE)
     return conn
@@ -15,7 +17,6 @@ def query_database(search_term):
     cursor = conn.cursor()
 
     # Query for ArtStyles
-
     cursor.execute("""
         SELECT *
         FROM ArtStyles
@@ -46,6 +47,8 @@ def query_database(search_term):
         'artists': artists
     }
 
+
+# WEBPAGES
 
 @app.route('/')
 def home():
@@ -111,6 +114,8 @@ def artist(id):
     conn.close()
     return render_template('artist.html', artist=artist)
 
+
+# FUNCTIONS
 
 @app.route('/search', methods=['POST'])
 def search():
