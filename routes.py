@@ -91,8 +91,13 @@ def artstyle(id):
     cur = conn.cursor()
     cur.execute("SELECT * FROM ArtStyles WHERE id = ?", (id,))
     artstyle = cur.fetchone()
+    if not artstyle:
+        return render_template('error.html', message="ArtStyle not found"), 404
+    cur.execute("SELECT * FROM Artworks WHERE artstyle_id = ?", (id,))
+    artworks = cur.fetchall()
     conn.close()
-    return render_template('artstyle.html', artstyle=artstyle)
+    return render_template('artstyle.html', artstyle=artstyle,
+                           artworks=artworks)
 
 
 @app.route('/medium/<int:id>')
@@ -101,8 +106,13 @@ def medium(id):
     cur = conn.cursor()
     cur.execute("SELECT * FROM Mediums WHERE id = ?", (id,))
     medium = cur.fetchone()
+    if not medium:
+        return render_template('error.html', message="Medium not found"), 404
+    cur.execute("SELECT * FROM Artworks WHERE medium_id = ?", (id,))
+    artworks = cur.fetchall()
     conn.close()
-    return render_template('medium.html', medium=medium)
+    return render_template('medium.html', medium=medium,
+                           artworks=artworks, )
 
 
 @app.route('/artist/<int:id>')
@@ -111,8 +121,13 @@ def artist(id):
     cur = conn.cursor()
     cur.execute("SELECT * FROM Artists WHERE id = ?", (id,))
     artist = cur.fetchone()
+    if not artist:
+        return render_template('error.html', message="Artist not found"), 404
+    cur.execute("SELECT * FROM Artworks")
+    artworks = cur.fetchall()
     conn.close()
-    return render_template('artist.html', artist=artist)
+    return render_template('artist.html', artist=artist,
+                           artworks=artworks)
 
 
 # FUNCTIONS
@@ -122,6 +137,11 @@ def search():
     search_term = request.form['search_term']
     results = query_database(search_term)
     return render_template('search.html', results=results)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html'), 404
 
 
 if __name__ == '__main__':

@@ -1,9 +1,73 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #f7f6f5; 
+  background-color: #f7f6f5;
+  overflow-x: hidden;
+}
+/* <!-- Styles for the all webpages to keep consistency --> */
 
+main {
+  margin-top: 30px;
+  padding-top: 5px;
+  font-family:  'Calibri', sans-serif;
+}
+
+h1 {
+  font-family: "Arial", sans-serif;
+  margin: 30px 40px 30px 33px;
+}
+
+h2 {
+  font-family: "Arial", sans-serif;
+  color: #ca4a28;
+  margin-left: 35px;
+  margin-right: 40px;
+}
+
+h3 {
+  font-family: "Arial", sans-serif;
+}
+
+p {
+  padding-top: 5px;
+  font-size: 17px;
+  margin-left: 35px;
+  margin-right: 50px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container img{
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
+}
+
+.link{
+  text-decoration: none;
+  color: #ca4a28;
+  font-weight: bold;
+}
+
+
+.space{
+  margin-top:50px
+  /* Puts a gap between the nav and paragraphs*/
 }
 
 /* Fixed Navigation Bar */
@@ -21,7 +85,7 @@ body {
 
 .topnav a {
   font-family: "Grandstander", cursive;
-  color: #ffffff;
+  color: #f7f6f5;
   text-align: center;
   padding: 18px 16px;
   text-decoration: none;
@@ -86,14 +150,23 @@ body {
   border: 1px solid #ccc;
 }
 
-/* Responsive Adjustments */
-@media screen and (max-width: 1000px) {
-  .topnav input#query {
-    width: 900px;
+/* Responsive Adjustments (Navigation) */
+@media screen and (max-width: 600px) {
+  h1, h2, p {
+    margin-left: 20px !important;
+  }
+  .main {
+    margin-top: 0px !important;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
+  .topnav input#query {
+    width: 950px;
+  }
+}
+
+@media screen and (max-width: 912px) {
   .topnav {
     flex-direction: column;
     align-items: flex-start;
@@ -117,70 +190,10 @@ body {
   }
 }
 
-
-@media screen and (max-width: 900px) and (min-width: 850px) {
+@media screen and (max-width: 1000px) and (min-width: 913px) {
   .topnav input#query {
       width: 400px;
   }
-}
-
-/* <!-- Styles for the all webpages to keep consistency --> */
-
-main {
-  margin-top: 30px;
-  padding-top: 5px;
-  font-family:  'Calibri', sans-serif;
-}
-
-h1 {
-  font-family: "Arial", sans-serif;
-  margin: 30px 40px 30px 33px;
-}
-
-h2 {
-  font-family: "Arial", sans-serif;
-  color: #ca4a28;
-  margin-left: 35px;
-  margin-right: 40px;
-}
-
-
-p {
-  padding-top: 5px;
-  font-size: 17px;
-  margin-left: 35px;
-  margin-right: 50px;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.container img{
-  object-fit: cover;
-  width: 100%;
-  height: 240px;
-}
-
-.link{
-  text-decoration: none;
-  color: #ca4a28;
-  font-weight: bold;
-}
-
-
-.space{
-  margin-top:50px
-  /* Puts a gap between the nav and paragraphs*/
 }
 
 /* CSS for Content Pages */
@@ -284,7 +297,7 @@ img {
   -ms-box-orient: vertical; /* Microsoft browsers */
 }
 
-/* Responsive styles for Search  */
+/* Responsive Adjustments (Search)  */
 @media (max-width: 768px) {
   .results-section{
     margin: 18px !important;
@@ -318,44 +331,7 @@ img {
   }
 }
 
-/* Responsive styles for Medium Navigation */
-@media screen and (max-width: 768px) {
-  .medium-link, .artstyle-link, .artist-link {
-    width: 48%; /* Two items per row on tablets */
-    margin: 1%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .medium-link, .artstyle-link, .artist-link {
-    width: 100%; /* Full width on mobile */
-    margin-bottom: 10px; /* Add spacing between items */
-  }
-
-  .medium-item, .artstyle-item, .artist-item {
-    flex-direction: column; /* Stack content vertically */
-    text-align: center; /* Center text on mobile */
-  }
-
-  .medium-image, .artstyle-item, .artist-item {
-    width: 100%; /* Full width image on mobile */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  .medium-info, .artstyle-info, .artist-info {
-    padding: 10px;
-  }
-
-  .medium-info h2, .artstyle-info h2, .artist-info h2 {
-    font-size: 1.2em; /* Smaller title font on mobile */
-  }
-
-  .medium-info p, .artstyle-info p, .artist-info p {
-    font-size: 0.9em; /* Smaller description font on mobile */
-  }
-}
-
-/* Content Layout */
+/* Content Layout for Pages with SQLITE */
 
 .main-content ul.key { 
   list-style-type: square;
@@ -377,6 +353,7 @@ img {
   position: sticky;
   top: 85px; 
   align-self: start;
+  z-index: 10;
 }
 
 .table-of-contents img {
@@ -478,3 +455,104 @@ section {
   margin-top: -100px;
 }
 
+/* Artwork Container */
+
+.artwork-info {
+  padding: 10px; 
+}
+
+.artwork-info h3{
+  padding: 0px;
+}
+
+.artwork-info p{
+  margin: 3px;
+}
+
+.artwork-item {
+  display: flex;
+  background: #f9f9f9;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 1100px;
+  text-decoration: none;
+}
+
+.artwork-item img{
+  padding: 15px;
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+}
+
+.artwork-container {
+  display: flex;
+  padding-top: 10px;
+  margin: 0px 35px 0px 35px;
+}
+
+.subtitle {
+  font-size: 10px;
+  color:#6666666a;
+  text-decoration: none;
+}
+
+.subtitle a{
+  font-size: 10px;
+  color:#ca4b2874;
+  text-decoration: none;
+}
+
+/* Responsive Adjustments (Content Pages) */
+
+@media (max-width: 912px) {
+  .artwork-info h3{
+    padding: 0px 5px 0px 16px;
+  }
+
+  .main-content h2 {
+    padding-top: 35px;
+  }
+
+  .space {
+    margin-top: 0px;
+  }
+
+  .content-container {
+    grid-template-columns: 1fr;
+    margin: 10px;
+  }
+  .table-of-contents {
+    position: static;
+    margin: 20px 0;
+  }
+  .artwork-container {
+    margin: 0;
+  }
+  .artwork-item {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .artwork-item img {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .border-block {
+    margin: 0px 15px 0px 15px;
+  }
+  .toc-link::before {
+    left: -5px;
+    font-size: 1em;
+  }
+  .toc-link {
+    padding-left: 15px;
+  }
+  .toc-chapters {
+    margin-left: 10px;
+  }
+}
