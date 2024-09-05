@@ -52,7 +52,12 @@ def query_database(search_term):
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    latest_mediums = get_latest_mediums(limit=4)
+    latest_artstyles = get_latest_artstyles(limit=4)
+    latest_artists = get_latest_artists(limit=4)
+    return render_template('home.html', latest_mediums=latest_mediums,
+                           latest_artstyles=latest_artstyles,
+                           latest_artists=latest_artists)
 
 
 @app.route('/artstyle')
@@ -123,7 +128,7 @@ def artist(id):
     artist = cur.fetchone()
     if not artist:
         return render_template('error.html', message="Artist not found"), 404
-    cur.execute("SELECT * FROM Artworks")
+    cur.execute("SELECT * FROM Artworks WHERE artist_id = ?", (id,))
     artworks = cur.fetchall()
     conn.close()
     return render_template('artist.html', artist=artist,
@@ -142,6 +147,48 @@ def search():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html'), 404
+
+
+def get_latest_artists(limit=5):
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT *
+        FROM Artists
+        ORDER BY created_at DESC
+        LIMIT ?
+    """, (limit,))
+    latest_artists = cur.fetchall()
+    conn.close()
+    return latest_artists
+
+
+def get_latest_artstyles(limit=5):
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT *
+        FROM ArtStyles
+        ORDER BY created_at DESC
+        LIMIT ?
+    """, (limit,))
+    latest_artstyles = cur.fetchall()
+    conn.close()
+    return latest_artstyles
+
+
+def get_latest_mediums(limit=5):
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT *
+        FROM Mediums
+        ORDER BY created_at DESC
+        LIMIT ?
+    """, (limit,))
+    latest_mediums = cur.fetchall()
+    conn.close()
+    return latest_mediums
 
 
 if __name__ == '__main__':

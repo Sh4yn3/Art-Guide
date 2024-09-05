@@ -19,6 +19,7 @@ main {
 h1 {
   font-family: "Arial", sans-serif;
   margin: 30px 40px 30px 33px;
+  text-decoration: none !important;
 }
 
 h2 {
@@ -26,10 +27,14 @@ h2 {
   color: #ca4a28;
   margin-left: 35px;
   margin-right: 40px;
+  margin-bottom: 15px;
+  text-decoration: none !important;
 }
 
 h3 {
   font-family: "Arial", sans-serif;
+  margin-bottom: 5px;
+  text-decoration: none !important;
 }
 
 p {
@@ -342,6 +347,18 @@ img {
   padding-bottom: 20px;
 }
 
+.main-content h3 {
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  margin-bottom: 0px;
+  margin-left: 36px;
+}
+
+.main-content p { 
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
 .content-container {
   margin: 55px 25px 0px 25px;
   display: grid;
@@ -376,7 +393,7 @@ img {
 .border-block {
   background-color: #ca4a28;
   padding: 2px;
-  margin: 0px 35px 0px 35px;
+  margin: 0px 35px 10px 35px;
 }
 
 .toc-chapters {
@@ -463,6 +480,7 @@ section {
 
 .artwork-info h3{
   padding: 0px;
+  margin: 15px 10px 0px 0px !important; 
 }
 
 .artwork-info p{
@@ -507,8 +525,9 @@ section {
 /* Responsive Adjustments (Content Pages) */
 
 @media (max-width: 912px) {
-  .artwork-info h3{
-    padding: 0px 5px 0px 16px;
+  .main-content h3 {
+    padding-bottom: 10px;
+    margin-left: 20px;
   }
 
   .main-content h2 {
@@ -530,6 +549,7 @@ section {
   .artwork-container {
     margin: 0;
   }
+
   .artwork-item {
     flex-direction: column;
     align-items: center;
@@ -555,4 +575,56 @@ section {
   .toc-chapters {
     margin-left: 10px;
   }
+}
+
+
+/* Latest Posts */
+
+.latest-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+}
+
+.latest-item {
+  padding: 10px;
+}
+
+.latest-container h3{
+  padding: 5px;
+  margin: 0px;
+  text-align: center !important;
+}
+
+.latest-container {
+  display: flex;
+  background: #f9f9f9;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 250px;
+  height: 320px;
+}
+
+.latest-container img{
+  padding: 10px;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.latest-container:hover {
+  transform: scale(1.02);
+}
+
+.latest-container {
+  display: flex;
+  padding-top: 10px;
+}
+
+.latest-link {
+  text-decoration: none;
+  color: #333;
 }

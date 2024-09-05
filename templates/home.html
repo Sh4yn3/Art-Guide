@@ -13,9 +13,62 @@
 <h1>  Welcome to Art Guide! </h1>
 
 <p> 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Aliquam ac maximus ligula. Vestibulum mauris dolor, dignissim quis mauris quis, tempor placerat turpis. Suspendisse gravida magna eu finibus tempus. Aenean elit eros, laoreet eu lectus sed, scelerisque pretium quam. Morbi consectetur turpis eget viverra fringilla. Nunc commodo magna sed nisi ultricies dapibus. Fusce nisi ante, dignissim nec malesuada sit amet, blandit a elit. Mauris massa magna, commodo eget lacinia sed, ultricies eu ante. Phasellus libero dolor, viverra a ipsum hendrerit, congue ullamcorper metus. In consectetur turpis quis urna tristique posuere. Donec placerat odio et nibh pharetra, at dictum sapien porttitor.
+    ArtGuide is a comprehensive resource for exploring the diverse world of art. Whether you're an art enthusiast, a student, or a seasoned artist, ArtGuide provides you with in-depth insights into various art mediums, styles, and the artists who have shaped them.
 
 </p>
+
+<div class="space"></div>
+
+<section>
+    <h2>Latest Mediums</h2>
+    <div class="latest-section">
+        {% for medium in latest_mediums %}
+            <div class="latest-container">
+                <div class="latest-items">
+                    <a href="/medium/{{medium[0]}}" class="latest-link">
+                    <img src="{{ medium[2]}}" alt="image of {{medium[1]}}">
+                    <h3>{{ medium[1] }}</h3>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<div class="space"></div>
+
+<section>
+    <h2>Latest ArtStyles</h2>
+        <div class="latest-section">
+        {% for artstyle in latest_artstyles %}
+            <div class="latest-container">
+                <div class="latest-items">
+                    <a href="/artstyle/{{artstyle[0]}}" class="latest-link">
+                    <img src="{{artstyle[2]}}" alt="image of {{artstyle[1]}}">
+                    <h3>{{ artstyle[1] }}</h3>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+</section>
+
+<div class="space"></div>
+
+<section>
+    <h2>Latest Artists</h2>
+    <div class="latest-section">
+        {% for artist in latest_artists %}
+            <div class="latest-container">
+                <div class="latest-items">
+                    <a href="/artist/{{artist[0]}}" class="latest-link"> 
+                    <img src="{{artist[2]}}" alt="image of {{artist[1]}}">
+                    <h3>{{ artist[1] }}</h3>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
 
 {%endblock%}

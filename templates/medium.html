@@ -46,7 +46,21 @@
         <section id="artworks">
             <h2> Examples of {{medium[1]}} </h2>
             <div class="border-block"></div>
-            <p> Insert Portfolio of Images </p>
+                {%for artwork in artworks%}
+                <div class="artwork-container">
+                    <div class="artwork-item">
+                        <img src="{{artwork[5]}}">
+                        <div class="artwork-info"> 
+                            <h3> {{artwork[1]}} </h3>
+                            <p> <b>Year:</b> {{artwork[6]}} </p>
+                            <p> <b>Artist:</b> {{artwork[9]}} </p>
+                            <p> <b>Artstyle:</b> {{artwork[10]}} </p>
+                            <p> {{artwork[7]|safe}} </p>
+                            <p class="subtitle"> {{artwork[8]|safe}} </p>
+                        </div>
+                    </div>
+                </div>
+            {%endfor%}
         </section>
         
     </div>
