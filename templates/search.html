@@ -1,8 +1,13 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1 class="space">Search Results</h1>
-    
+    <h1 class="space-directions">Search Results</h1>
+
+    <!-- Display message when no results were found -->
+    {% if no_results %}
+        <p>What you're looking for isn't here. Try searching for something else!</p>
+    {% endif %}
+
     {% if results.artstyles %}
         <h2>Artstyles</h2>
         <div class="results-section">
@@ -17,7 +22,7 @@
             {% endfor %}
         </div>
     {% endif %}
-    
+
     {% if results.mediums %}
         <h2>Mediums</h2>
         <div class="results-section">
@@ -32,7 +37,7 @@
             {% endfor %}
         </div>
     {% endif %}
-    
+
     {% if results.artists %}
         <h2>Artists</h2>
         <div class="results-section">
@@ -46,5 +51,5 @@
                 </a>
             {% endfor %}
         </div>
-    {% endif %}    
+    {% endif %}
 {% endblock %}

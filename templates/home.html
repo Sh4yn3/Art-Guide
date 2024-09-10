@@ -12,15 +12,27 @@
 
 <h1>  Welcome to Art Guide! </h1>
 
-<p> 
-    ArtGuide is a comprehensive resource for exploring the diverse world of art. Whether you're an art enthusiast, a student, or a seasoned artist, ArtGuide provides you with in-depth insights into various art mediums, styles, and the artists who have shaped them.
+<div class="home-description">
+    <p> 
+        ArtGuide is a comprehensive resource for exploring the diverse world of art. Whether you're an art enthusiast, a student, or a seasoned artist, our website provides you with in-depth insights into various art mediums, styles, and the artists who have shaped them!
+    </p>
 
-</p>
+    <div class="space"></div>
+
+    <h2> What You'll Find Here: </h2>
+    <div class="border-block"></div>
+    <p><b>Mediums:</b> Discover the different materials and techniques artists use to bring their visions to life, from traditional oil paints to digital mediums.
+    </p>
+    <p><b>ArtStyles:</b> Explore the evolution of art through different styles, understanding the unique characteristics and historical contexts that define each one.</p>
+    <p><b>Artists:</b> Learn about the lives and works of artists who have made significant contributions to the art world, including their biographies, accomplishments, and signature works.</p>
+    <p> < That being said, check out our latest pages below! > </p>
+    <div class="border-block"></div>
+</div>
 
 <div class="space"></div>
 
 <section>
-    <h2>Latest Mediums</h2>
+    <h2 class="space-directions">Latest Mediums</h2>
     <div class="latest-section">
         {% for medium in latest_mediums %}
             <div class="latest-container">
@@ -38,7 +50,7 @@
 <div class="space"></div>
 
 <section>
-    <h2>Latest ArtStyles</h2>
+    <h2 class="space-directions">Latest ArtStyles</h2>
         <div class="latest-section">
         {% for artstyle in latest_artstyles %}
             <div class="latest-container">
@@ -56,7 +68,7 @@
 <div class="space"></div>
 
 <section>
-    <h2>Latest Artists</h2>
+    <h2 class="space-directions">Latest Artists</h2>
     <div class="latest-section">
         {% for artist in latest_artists %}
             <div class="latest-container">

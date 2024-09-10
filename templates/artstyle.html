@@ -2,18 +2,17 @@
 {% block content %}
 <title> {{artstyle[1]}} - Artstyle </title>
 
-<p class="space">
+<p class="space-directions">
     <a href="/" class="link">Home</a> / <a href="/artstyle" class="link">Artstyles </a>/ {{artstyle[1]}} 
 </p>
 
-<body>
 <h1> {{artstyle[1]}} </h1>
 
 <hr/>
 
 <div class="content-container"> 
     <div class="table-of-contents">
-        <img src="{{artstyle[2]}}">
+            <img class="myImages" img id="myImg" src="{{artstyle[2]}}" alt="Image of {{artstyle[1]}}">
         <div class="toc-title"> 
              <h2> {{artstyle[1]}} </h2>
         </div>
@@ -52,7 +51,7 @@
             {%for artwork in artworks%}
                 <div class="artwork-container">
                     <div class="artwork-item">
-                        <img src="{{artwork[5]}}">
+                        <img class="myImages" img id="myImg" src="{{artwork[5]}}" alt="{{artwork[1]}} {{artwork[8]}}">
                         <div class="artwork-info"> 
                             <h3> {{artwork[1]}} </h3>
                             <p> <b>Year:</b> {{artwork[6]}} </p>
@@ -70,6 +69,46 @@
 </div>
 
 
-</body>
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+
+<script>
+// Script based on w3schools.com, adjusted for more
+    
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// To get all images
+var images = document.getElementsByClassName('myImages');
+    
+// Get the image and insert it inside the modal - use "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+// Go through all of the images with myImages
+for (var i = 0; i < images.length; i++) {
+var img = images[i];
+    
+// and attach our click listener for this image.
+img.onclick = function(evt) {
+    console.log(evt);
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    }
+}
+
+var span = document.getElementsByClassName("close")[0];
+  
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+</script>
 
 {% endblock %}

@@ -50,6 +50,11 @@ def query_database(search_term):
 
 # WEBPAGES
 
+@app.route('/test')
+def dontmind():
+    return render_template('dontmind.html')
+
+
 @app.route('/')
 def home():
     latest_mediums = get_latest_mediums(limit=4)
@@ -98,7 +103,8 @@ def artstyle(id):
     artstyle = cur.fetchone()
     if not artstyle:
         return render_template('error.html', message="ArtStyle not found"), 404
-    cur.execute("SELECT * FROM Artworks WHERE artstyle_id = ?", (id,))
+    cur.execute("SELECT * FROM Artworks WHERE artstyle_id = ? ORDER BY year",
+                (id,))
     artworks = cur.fetchall()
     conn.close()
     return render_template('artstyle.html', artstyle=artstyle,
@@ -113,7 +119,8 @@ def medium(id):
     medium = cur.fetchone()
     if not medium:
         return render_template('error.html', message="Medium not found"), 404
-    cur.execute("SELECT * FROM Artworks WHERE medium_id = ?", (id,))
+    cur.execute("SELECT * FROM Artworks WHERE medium_id = ? ORDER BY year",
+                (id,))
     artworks = cur.fetchall()
     conn.close()
     return render_template('medium.html', medium=medium,
@@ -128,7 +135,8 @@ def artist(id):
     artist = cur.fetchone()
     if not artist:
         return render_template('error.html', message="Artist not found"), 404
-    cur.execute("SELECT * FROM Artworks WHERE artist_id = ?", (id,))
+    cur.execute("SELECT * FROM Artworks WHERE artist_id = ? ORDER BY year",
+                (id,))
     artworks = cur.fetchall()
     conn.close()
     return render_template('artist.html', artist=artist,
@@ -141,7 +149,12 @@ def artist(id):
 def search():
     search_term = request.form['search_term']
     results = query_database(search_term)
-    return render_template('search.html', results=results)
+
+    # Check if no results were found
+    no_results = all(len(result) == 0 for result in results.values())
+
+    return render_template('search.html', results=results,
+                           no_results=no_results)
 
 
 @app.errorhandler(404)
