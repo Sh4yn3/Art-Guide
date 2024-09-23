@@ -117,6 +117,8 @@ def medium(id):
     cur = conn.cursor()
     cur.execute("SELECT * FROM Mediums WHERE id = ?", (id,))
     medium = cur.fetchone()
+
+    # if no valid form is found, leads to 404 page
     if not medium:
         return render_template('error.html', message="Medium not found"), 404
     cur.execute("SELECT * FROM Artworks WHERE medium_id = ? ORDER BY year",

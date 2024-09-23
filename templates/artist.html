@@ -16,14 +16,14 @@
             <img class="myImages" img id="myImg" src="{{artist[2]}}" alt="Image of {{artist[1]}}">
         <div class="toc-title"> 
              <h2> {{artist[1]}} </h2>
-        </div>
+        </div> <!-- Table of Content Image -->
         <div class="toc-chapters">
             <li><a href="#summary" class="toc-link">Summary</a></li>
             <li><a href="#accomplishments" class="toc-link">Accomplishments</a></li>
             <li><a href="#biography" class="toc-link">History</a></li>
             <li><a href="#artworks" class="toc-link">Artworks</a></li>
-        </div>
-    </div>
+        </div> <!-- Table of Content chapters -->
+    </div> <!-- Whole Table of Content -->
     <div class="main-content"> 
         <section id="summary">
             <h2> Who is {{artist[1]}}? </h2>
@@ -60,14 +60,14 @@
                             <p> <b>Artstyle:</b> {{artwork[10]}} </p>
                             <p> {{artwork[7]|safe}} </p>
                             <p class="subtitle"> {{artwork[8]|safe}} </p>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- Artwork Info -->
+                    </div> 
+                </div> <!-- Whole Artwork Box -->
             {%endfor%}
         </section>
         
-    </div>
-</div>
+    </div> <!-- Main Content -->
+</div> <!-- Content Container -->
 
 
 <div id="myModal" class="modal">
@@ -79,7 +79,7 @@
 
 <script>
 // Script based on w3schools.com, adjusted for more
-    
+ 
 // Get the modal
 var modal = document.getElementById("myModal");
 

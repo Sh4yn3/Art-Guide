@@ -35,15 +35,16 @@
         <a href="/artist">Artists</a>
         <div class="search-container">
             <form action="/search" method="POST" onsubmit="return validateSearch()">
-                <input type="text" id="query" name="search_term" placeholder=" Search..">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" id="query" name="search_term" placeholder=" Search.." maxlength="56">
+                <button type="submit" onclick="limitFunction()"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
 </nav>
 
 <script>
-    //Originally from WS3schools
+    //All javascript is originally from www.w3schools.com
+    // Function for the minimum search field
     function validateSearch() {
       var query = document.getElementById("query").value.trim();
       if (query === "") {
@@ -52,6 +53,12 @@
       }
       return true; // Allow form submission if the search is valid
     }
+
+    // Function for the max search field
+    function limitFunction() {
+        var x = document.getElementById("mySearch").maxLength;
+        document.getElementById("demo").innerHTML=x;
+      }
 </script>
 
 <div id="results"></div>
