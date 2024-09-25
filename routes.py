@@ -36,6 +36,7 @@ def query_database(search_term):
 
 
 # ROUTES FOR WEBPAGES
+
 @app.route('/')
 def home():
     return render_template(
@@ -56,13 +57,14 @@ def home():
     )
 
 
-# Showcases navigation of artstyles
+# Showcases navigation of artstyles (ex: Impressionism, Surrealism )
 @app.route('/artstyle')
 def artstylenav():
     return render_template('artstylenav.html',
                            artstyles=db_query("SELECT * FROM ArtStyles"))
 
 
+# Showcases navigation of mediums (ex: Watercolour, Gouche )
 @app.route('/medium')
 def mediumsnav():
     return render_template('mediumsnav.html',
@@ -79,6 +81,7 @@ def artistnav():
 def artstyle(id):
     artstyle = db_query(f"SELECT * FROM ArtStyles WHERE id={id}",
                         multiple=False)
+    # if no valid form is found, leads to 404 page
     if not artstyle:
         return render_template('error.html', message="ArtStyle not found"), 404
     artworks = db_query(f'''
@@ -92,6 +95,7 @@ def artstyle(id):
 @app.route('/medium/<int:id>')
 def medium(id):
     medium = db_query(f"SELECT * FROM Mediums WHERE id={id}", multiple=False)
+    # if no valid form is found, leads to 404 page
     if not medium:
         return render_template('error.html', message="Medium not found"), 404
     artworks = db_query(f'''
@@ -104,6 +108,7 @@ def medium(id):
 @app.route('/artist/<int:id>')
 def artist(id):
     artist = db_query(f"SELECT * FROM Artists WHERE id={id}", multiple=False)
+    # if no valid form is found, leads to 404 page
     if not artist:
         return render_template('error.html', message="Artist not found"), 404
     artworks = db_query(f'''
@@ -122,6 +127,7 @@ def search():
                            no_results=no_results)
 
 
+# if page does not exist, leads to 404 page
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html'), 404
