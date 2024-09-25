@@ -25,7 +25,7 @@ h1 {
 h2 {
   font-family: "Arial", sans-serif;
   color: #ca4a28;
-  margin: 35px 10px 10px 35px;
+  margin: 5px 35px 10px 35px;
   text-decoration: none !important;
   
 }
@@ -374,6 +374,8 @@ img {
   grid-template-columns: 20% 80%; 
 }
 
+/* Table of Contents */
+
 .table-of-contents {
   margin: 0px 10px 5px 10px;
   position: sticky;
@@ -452,10 +454,18 @@ section:target h2 {
   opacity: 1; 
   color: #b63f1e; 
   font-size: 1.2em; 
+  transition: transform 0.3s ease;
 }
 
+/* Rotate on hover */
+.toc-link:hover::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Rotate when active (current section) */
 .toc-link.active::before {
   color: #b63f1e;
+  transform: translateY(-50%) rotate(90deg);
 }
 
 section:target ~ .table-of-contents a[href="#summary"]:before,
@@ -478,8 +488,8 @@ section:target ~ .table-of-contents a[href="#accomplishments"] {
 
 section {
   position: relative;
-  padding-top: 66px; 
-  margin-top: -100px;
+  scroll-margin-top: 100px;  
+  margin-top: 5px;
 }
 
 /* Artwork Container */

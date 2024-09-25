@@ -17,10 +17,10 @@
                     <div class="result-info">
                         <h3 class="result-title">{{ artstyle[1] }}</h3>
                         <p class="result-description">{{ artstyle[3] }}</p>
-                    </div>
+                    </div> <!-- Results Info for Artstyles -->
                 </a>
             {% endfor %}
-        </div>
+        </div> <!-- Artstyle's Whole Results Section  -->
     {% endif %}
 
     {% if results.mediums %}
@@ -32,10 +32,10 @@
                     <div class="result-info">
                         <h3 class="result-title">{{ medium[1] }}</h3>
                         <p class="result-description">{{ medium[4] }}</p>
-                    </div>
+                    </div> <!-- Results Info for Mediums -->
                 </a>
             {% endfor %}
-        </div>
+        </div> <!-- Medium's Whole Results Section  -->
     {% endif %}
 
     {% if results.artists %}
@@ -47,9 +47,9 @@
                     <div class="result-info">
                         <h3 class="result-title">{{ artist[1] }}</h3>
                         <p class="result-description">{{ artist[3] }}</p>
-                    </div>
+                    </div> <!-- Results Info for Artists -->
                 </a>
             {% endfor %}
-        </div>
+        </div> <!-- Artist's Whole Results Section  -->
     {% endif %}
 {% endblock %}
